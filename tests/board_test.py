@@ -1,6 +1,7 @@
 import unittest
 from unittest import TestCase
-from board import Board, InvalidMove
+from notakto_exceptions import InvalidMove
+from board import Board
 
 class BoardMoveTest(TestCase):
     def corner_test(self):

@@ -1,5 +1,4 @@
-class InvalidMove(StandardError):
-    pass
+from notakto_exceptions import InvalidMove
 
 class Board(object):
     def __init__(self):

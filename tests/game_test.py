@@ -60,4 +60,3 @@ class GameIsOver(TestCase):
         game.make_move(0, 1, 2)
 
         self.assertTrue(game.is_over())
-

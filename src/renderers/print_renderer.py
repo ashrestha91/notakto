@@ -11,10 +11,18 @@ class PrintRenderer(object):
             print "Board {}".format(i)
             if not board.is_alive():
                 print "DEAD BOARD"
-            print "{} {} {}".format(board.pos(0, 0), board.pos(1,0), board.pos(2,0))
-            print "{} {} {}".format(board.pos(0, 1), board.pos(1,1), board.pos(2,1))
-            print "{} {} {}".format(board.pos(0, 2), board.pos(1,2), board.pos(2,2))
-            print "==========="
+            print "{}|{}|{}".format(self._render_cell(board.pos(0, 0)),
+                    self._render_cell(board.pos(1,0)), 
+                    self._render_cell(board.pos(2,0)))
+            print  "-----------"
+            print "{}|{}|{}".format(self._render_cell(board.pos(0, 1)), 
+                    self._render_cell(board.pos(1,1)), 
+                    self._render_cell(board.pos(2,1)))
+            print  "-----------"
+            print "{}|{}|{}".format(self._render_cell(board.pos(0, 2)), 
+                    self._render_cell(board.pos(1,2)),
+                    self._render_cell(board.pos(2,2)))
+            print "==============="
         print
 
     def render_error(self, game, error):
@@ -24,3 +32,9 @@ class PrintRenderer(object):
         print ">>>>>>"
 
         self.render(game)
+
+    def _render_cell(self, pos_val):
+        if pos_val == 0:
+            return "   "
+        else:
+            return " X "
